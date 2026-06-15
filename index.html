@@ -238,21 +238,11 @@ body[data-mode="primaria"] .tray .pal-btn .pal-ico{width:30px;height:30px}
 
 /* program footer tools */
 .prog-tools{flex:0 0 auto;border-top:1px solid var(--line);padding:11px 14px;background:var(--panel-2)}
-.preset-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}
 .chip{
   font-size:11.5px;font-weight:600;padding:7px 11px;border-radius:20px;
   border:1.5px solid var(--line);background:#fff;color:var(--ink);transition:.12s;
 }
 .chip:hover{border-color:var(--green-2);background:#f3fbf6}
-.io-row{display:flex;gap:7px}
-.io-row button{
-  flex:1;font-size:12px;font-weight:600;padding:8px;border-radius:9px;
-  border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);transition:.12s;
-}
-.io-row button:hover{border-color:var(--green-2);color:var(--ink)}
-#ioArea{width:100%;margin-top:8px;font-family:var(--mono);font-size:11px;height:0;opacity:0;
-  border:1.5px solid var(--line);border-radius:9px;padding:0;transition:.2s;resize:none;overflow:hidden}
-#ioArea.on{height:96px;opacity:1;padding:8px}
 
 /* ====== DIDATTICA DRAWER ====== */
 .drawer{
@@ -331,6 +321,50 @@ body[data-mode="primaria"] .fchip{min-width:60px;font-size:12px;padding:9px 11px
 .coach .got{flex:0 0 auto;font-size:12px;font-weight:700;color:#04222e;background:#86d4ea;border-radius:8px;padding:7px 12px}
 .coach .got:hover{background:#b9e8cb}
 @media(max-width:560px){.coach-steps{flex-direction:column;gap:6px}}
+
+/* ====== SFIDE ====== */
+.challenge-bar{flex:0 0 auto;display:none;background:#fff;border-bottom:1px solid var(--line);padding:13px 15px}
+.challenge-bar.on{display:block}
+.ch-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ch-title{display:flex;align-items:center;gap:9px;min-width:0}
+.ch-badge{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:var(--water);color:#fff;padding:3px 7px;border-radius:6px;flex:0 0 auto}
+.ch-title b{font-family:'Space Grotesk',sans-serif;font-size:15.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ch-exit{font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:5px 10px;border-radius:7px;flex:0 0 auto}
+.ch-exit:hover{background:var(--panel-2);color:var(--ink)}
+.ch-consegna{font-size:13px;color:var(--ink);line-height:1.5;margin:8px 0}
+.ch-reqs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+.ch-req{font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:20px;background:#fdf2dd;color:#7a5410}
+.ch-target-lab{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.ch-target{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tk{font-size:11.5px;font-weight:600;padding:5px 9px 5px 5px;border-radius:9px;background:var(--panel-2);color:var(--ink);display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line)}
+.tk .tkn{font-family:var(--mono);font-size:9px;color:var(--ink-soft);background:#fff;border-radius:50%;width:16px;height:16px;display:grid;place-items:center;flex:0 0 auto}
+.tk .tkd{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+.ch-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.ch-verify{background:var(--water-bright);color:#04222e;font-weight:700;font-size:13px;padding:9px 17px;border-radius:10px;transition:.13s}
+.ch-verify:hover{background:#2bbcd8}
+.ch-verify:active{transform:translateY(1px)}
+.ch-result{font-size:12.5px;font-weight:600;line-height:1.45;flex:1;min-width:170px}
+.ch-result .rline{display:block}
+.ch-result.ok{color:#1f7a4d}
+.ch-result.no{color:#7a5410}
+
+/* tab strumenti + chip sfide */
+.tools-tabs{display:flex;gap:6px;align-items:center;margin-bottom:10px}
+.ttab{font-size:12.5px;font-weight:600;padding:6px 13px;border-radius:8px;color:var(--ink-soft);border:1.5px solid transparent}
+.ttab.on{background:#fff;color:var(--water);border-color:var(--line)}
+.ttab:hover:not(.on){color:var(--ink)}
+.tclear{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:6px 12px;border-radius:8px;border:1.5px solid var(--line);background:#fff}
+.tclear:hover{border-color:var(--amber);color:#7a5410}
+.chip-row{display:flex;gap:7px;flex-wrap:wrap}
+.sfida-chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;padding:7px 12px;border-radius:22px;border:1.5px solid var(--line);background:#fff;color:var(--ink);transition:.12s}
+.sfida-chip:hover{border-color:var(--water-bright)}
+.sfida-chip.active{border-color:var(--water);background:#eaf7fb;color:var(--water)}
+.sfida-chip .diff{display:inline-flex;gap:2px}
+.sfida-chip .diff i{width:5px;height:5px;border-radius:50%;background:var(--line)}
+.sfida-chip .diff i.on{background:var(--amber)}
+.sfida-chip .done{width:16px;height:16px;border-radius:50%;background:#1f7a4d;display:grid;place-items:center;flex:0 0 auto}
+body[data-mode="primaria"] .ch-consegna{font-size:14.5px}
+body[data-mode="primaria"] .sfida-chip{font-size:13px;padding:9px 14px}
 
 /* ====== RESPONSIVE ====== */
 /* Tablet / iPad: palco in alto, officina sotto (toolbox + workspace) */
@@ -452,15 +486,29 @@ body[data-mode="primaria"] .fchip{min-width:60px;font-size:12px;padding:9px 11px
       <h2>Area di lavoro</h2>
       <span id="blkCount" style="font-family:var(--mono);font-size:12px;color:var(--ink-soft)">0 blocchi</span>
     </div>
+    <div class="challenge-bar" id="challengeBar">
+      <div class="ch-top">
+        <div class="ch-title"><span class="ch-badge" id="chBadge">Sfida</span><b id="chName"></b></div>
+        <button class="ch-exit" id="chExit">Abbandona</button>
+      </div>
+      <p class="ch-consegna" id="chConsegna"></p>
+      <div class="ch-reqs" id="chReqs"></div>
+      <div class="ch-target-lab">Sequenza di effetti da ottenere</div>
+      <div class="ch-target" id="chTarget"></div>
+      <div class="ch-actions">
+        <button class="ch-verify" id="chVerify">Verifica soluzione</button>
+        <div class="ch-result" id="chResult"></div>
+      </div>
+    </div>
     <div class="workspace" id="prog"></div>
     <div class="prog-tools">
-      <div class="preset-row" id="presets"></div>
-      <div class="io-row">
-        <button id="btnExport">Esporta</button>
-        <button id="btnImport">Importa</button>
-        <button id="btnClear">Svuota</button>
+      <div class="tools-tabs">
+        <button id="tabSfide" class="ttab on">Sfide</button>
+        <button id="tabEsempi" class="ttab">Esempi</button>
+        <button id="btnClear" class="tclear" title="Svuota l'area di lavoro">Svuota</button>
       </div>
-      <textarea id="ioArea" placeholder="Incolla qui un programma e premi Importa di nuovo…"></textarea>
+      <div class="chip-row" id="sfideRow"></div>
+      <div class="chip-row" id="presets" style="display:none"></div>
     </div>
   </div>
 </div>
@@ -1017,6 +1065,10 @@ function gate(){   // in modalità Passo, attende il click su "Passo"
   return new Promise(res=>{ exec.stepResolve=res; });
 }
 
+/* ---- registrazione effetti (trace) per la verifica delle Sfide ---- */
+function bracket(v){ return v<=33?'bassa':(v<=66?'media':'alta'); }
+function rec(tok){ if(exec.capturing) exec.trace.push(tok); }
+
 async function runNode(node){
   if(exec.cancelled) return;
   exec.stepCount++; hudStep.textContent=exec.stepCount;
@@ -1028,24 +1080,29 @@ async function runNode(node){
   const p=node.params, sp=exec.speed;
   switch(node.type){
     case 'getto':
+      rec('getto:'+p.forma);
       fountain.on=true; fountain.forma=p.forma;
       hudForm.textContent=p.forma;
       if(fountain.intensita<8){ hudNow.textContent='Getto acceso, ma intensità \u2248 0 — alza la variabile'; }
       await wait(280/sp);
       break;
     case 'ferma':
+      rec('ferma');
       fountain.on=false; hudForm.textContent='spenta';
       await wait(200/sp);
       break;
     case 'colore':
+      rec('colore:'+p.colore);
       fountain.color=COLORS[p.colore];
       await wait(160/sp);
       break;
     case 'luce':
+      rec('luce:'+bracket(p.liv));
       fountain.glow=p.liv/100;
       await wait(160/sp);
       break;
     case 'suono':
+      rec('suono:'+p.nota);
       playNote(p.nota);
       await wait(420/sp);
       break;
@@ -1053,6 +1110,7 @@ async function runNode(node){
       await wait((p.sec*1000)/sp);
       break;
     case 'intensita':
+      rec('intensita:'+bracket(p.val));
       setVar(p.val);
       await wait(220/sp);
       break;
@@ -1074,9 +1132,10 @@ async function runNode(node){
 
 async function runProgram(mode){
   if(exec.running) return;
-  if(program.length===0){ flashEmpty(); return; }
+  if(program.length===0){ flashEmpty(); if(exec.verify){ exec.verify=false; chResultMsg(false,[{t:'no',m:'L\'area di lavoro è vuota: costruisci prima l\'algoritmo.'}]); } return; }
   ensureAudio();
   exec.running=true; exec.cancelled=false; exec.mode=mode; exec.stepCount=0;
+  exec.trace=[]; exec.capturing=true;
   clearHighlights();
   setTransport(true);
   for(const node of program){ await runNode(node); if(exec.cancelled) break; }
@@ -1084,12 +1143,13 @@ async function runProgram(mode){
 }
 
 function finishRun(){
-  exec.running=false; exec.mode='play';
+  exec.running=false; exec.mode='play'; exec.capturing=false;
   setTransport(false);
   if(!exec.cancelled){
     hudNow.textContent='— programma terminato —'; hudNow.classList.add('idle');
   }
   setTimeout(()=>{ if(!exec.running) clearHighlights(); }, 900);
+  if(exec.verify){ exec.verify=false; if(!exec.cancelled) evaluateChallenge(exec.trace.slice()); }
 }
 
 /* avanzamento in modalità Passo */
@@ -1225,37 +1285,165 @@ function clonePreset(arr){
 const presetsEl=document.getElementById('presets');
 Object.keys(PRESETS).forEach(name=>{
   const b=document.createElement('button'); b.className='chip'; b.textContent=name;
-  b.onclick=()=>{ stopRun(); setInsertTarget(null); program=clonePreset(PRESETS[name]); renderProgram(); };
+  b.onclick=()=>{ exitChallenge(); stopRun(); setInsertTarget(null); program=clonePreset(PRESETS[name]); renderProgram(); };
   presetsEl.appendChild(b);
 });
 
-/* ============================================================
-   ESPORTA / IMPORTA / SVUOTA
-   ============================================================ */
-const ioArea=document.getElementById('ioArea');
-function serialize(list){ return list.map(n=>{ const o={type:n.type,params:n.params}; if(n.children) o.children=serialize(n.children); return o; }); }
-document.getElementById('btnExport').onclick=()=>{
-  ioArea.classList.add('on');
-  ioArea.value=JSON.stringify(serialize(program));
-  ioArea.select();
-  try{ navigator.clipboard.writeText(ioArea.value); }catch(e){}
-};
-document.getElementById('btnImport').onclick=()=>{
-  if(!ioArea.classList.contains('on')){ ioArea.classList.add('on'); ioArea.focus(); return; }
-  try{
-    const data=JSON.parse(ioArea.value.trim());
-    if(!Array.isArray(data)) throw 0;
-    stopRun(); setInsertTarget(null); program=clonePreset(data); renderProgram();
-    ioArea.classList.remove('on');
-  }catch(e){
-    ioArea.style.borderColor='var(--amber)';
-    ioArea.value='Programma non valido — incolla il testo esportato e riprova.';
-    setTimeout(()=>ioArea.style.borderColor='',1500);
-  }
-};
 document.getElementById('btnClear').onclick=()=>{
   stopRun(); setInsertTarget(null); program=[]; renderProgram();
 };
+
+/* ============================================================
+   SFIDE — consegne con sequenza esatta di effetti da ottenere
+   ============================================================ */
+const CHALLENGES = [
+  { id:'s1', nome:'Onda azzurra', diff:1,
+    consegna:'Colora l\'acqua di azzurro, fai partire un getto a ventaglio e suona la nota Do — in quest\'ordine.',
+    target:['colore:azzurro','getto:ventaglio','suono:Do'] },
+
+  { id:'s2', nome:'Cinque spruzzi', diff:2,
+    consegna:'Suona la nota Sol esattamente cinque volte. Usa un ciclo: non incollare cinque blocchi uguali.',
+    target:['suono:Sol','suono:Sol','suono:Sol','suono:Sol','suono:Sol'],
+    require:{loop:true}, maxBlocks:4 },
+
+  { id:'s3', nome:'Crescendo', diff:2,
+    consegna:'Un getto centrale che cresce: imposta l\'intensità bassa, accendi il getto, poi porta l\'intensità a media e infine ad alta.',
+    target:['intensita:bassa','getto:centrale','intensita:media','intensita:alta'] },
+
+  { id:'s4', nome:'Finale a comando', diff:3,
+    consegna:'Porta l\'intensità ad alta. Poi, SOLO SE l\'intensità è alta, colora di ambra, accendi tutti i getti, metti la luce alta e suona un Accordo.',
+    target:['intensita:alta','colore:ambra','getto:tutti','luce:alta','suono:Accordo'],
+    require:{cond:true} },
+
+  { id:'s5', nome:'Grande spettacolo', diff:3,
+    consegna:'Colora di verde e lancia tre onde usando un ciclo. Poi porta l\'intensità ad alta e, solo se è alta, gran finale: ambra, tutti i getti e un Accordo. Massimo 8 blocchi.',
+    target:['colore:verde','getto:onda','getto:onda','getto:onda','intensita:alta','colore:ambra','getto:tutti','suono:Accordo'],
+    require:{loop:true,cond:true}, maxBlocks:8 }
+];
+
+let activeChallenge=null;
+const solved=new Set();
+try{ (JSON.parse(localStorage.getItem('fa_solved')||'[]')).forEach(x=>solved.add(x)); }catch(e){}
+function persistSolved(){ try{ localStorage.setItem('fa_solved',JSON.stringify([...solved])); }catch(e){} }
+
+/* etichette e colori dei token effetto */
+function tokenLabel(t){
+  if(t==='ferma') return 'Ferma getti';
+  const [k,v]=t.split(':');
+  const M={colore:'Colore',getto:'Getto',suono:'Suono',intensita:'Intensità',luce:'Luce'};
+  return (M[k]||k)+' '+v;
+}
+function tokenColor(t){
+  const [k,v]=t.split(':');
+  if(k==='colore' && COLORS[v]) return COLORS[v].hex;
+  if(k==='getto') return 'var(--water)';
+  if(k==='suono') return 'var(--blue)';
+  if(k==='intensita') return 'var(--amber)';
+  if(k==='luce') return 'var(--amber-soft)';
+  return 'var(--ink-soft)';
+}
+function tokenChip(t,i){
+  return `<span class="tk"><span class="tkn">${i+1}</span><span class="tkd" style="background:${tokenColor(t)}"></span>${tokenLabel(t)}</span>`;
+}
+
+/* presenza di un tipo di blocco nell'albero */
+function treeHas(type,list=program){
+  for(const n of list){ if(n.type===type) return true; if(n.children && treeHas(type,n.children)) return true; }
+  return false;
+}
+
+/* lista Sfide */
+const sfideRow=document.getElementById('sfideRow');
+function renderSfideRow(){
+  sfideRow.innerHTML='';
+  CHALLENGES.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='sfida-chip'+(activeChallenge && activeChallenge.id===c.id?' active':'');
+    const dots=[1,2,3].map(n=>`<i class="${n<=c.diff?'on':''}"></i>`).join('');
+    const done = solved.has(c.id)
+      ? '<span class="done"><svg width="9" height="9" viewBox="0 0 10 10"><path d="M1.5 5.2l2.3 2.3L8.5 2.6" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'
+      : '';
+    b.innerHTML=`<span class="diff">${dots}</span>${c.nome}${done}`;
+    b.onclick=()=>loadChallenge(c.id);
+    sfideRow.appendChild(b);
+  });
+}
+
+function loadChallenge(id){
+  activeChallenge=CHALLENGES.find(c=>c.id===id);
+  stopRun(); setInsertTarget(null); program=[]; renderProgram();
+  fountain.on=false; fountain.color=COLORS.azzurro; fountain.glow=0.35; setVar(60);
+  renderChallengeBar(); renderSfideRow();
+}
+function exitChallenge(){ activeChallenge=null; renderChallengeBar(); renderSfideRow(); }
+
+const challengeBar=document.getElementById('challengeBar');
+function renderChallengeBar(){
+  if(!activeChallenge){ challengeBar.classList.remove('on'); return; }
+  const c=activeChallenge;
+  challengeBar.classList.add('on');
+  document.getElementById('chName').textContent=c.nome;
+  document.getElementById('chConsegna').textContent=c.consegna;
+  const reqs=[];
+  if(c.require && c.require.loop) reqs.push('richiede un ciclo');
+  if(c.require && c.require.cond) reqs.push('richiede una condizione');
+  if(c.maxBlocks) reqs.push('massimo '+c.maxBlocks+' blocchi');
+  document.getElementById('chReqs').innerHTML = reqs.map(r=>`<span class="ch-req">${r}</span>`).join('');
+  document.getElementById('chTarget').innerHTML = c.target.map((t,i)=>tokenChip(t,i)).join('');
+  const res=document.getElementById('chResult'); res.className='ch-result'; res.innerHTML='';
+}
+
+function chResultMsg(ok, lines){
+  const el=document.getElementById('chResult');
+  el.className='ch-result '+(ok?'ok':'no');
+  el.innerHTML=lines.map(l=>`<span class="rline">${l.m}</span>`).join('');
+}
+
+/* VERIFICA: esegue e confronta gli effetti prodotti col bersaglio */
+document.getElementById('chVerify').onclick=()=>{
+  if(!activeChallenge || exec.running) return;
+  exec.verify=true; runProgram('play');
+};
+
+function evaluateChallenge(trace){
+  const c=activeChallenge; if(!c) return;
+  const exp=c.target, got=trace, problems=[];
+
+  let seqOk=true, diff=-1;
+  const L=Math.max(exp.length,got.length);
+  for(let i=0;i<L;i++){ if(exp[i]!==got[i]){ seqOk=false; diff=i; break; } }
+  if(!seqOk){
+    const e=exp[diff], g=got[diff];
+    if(g===undefined) problems.push({m:`Manca un effetto al passo ${diff+1}: serviva «${tokenLabel(e)}».`});
+    else if(e===undefined) problems.push({m:`Effetto in più al passo ${diff+1}: hai prodotto «${tokenLabel(g)}».`});
+    else problems.push({m:`Passo ${diff+1}: hai prodotto «${tokenLabel(g)}», serviva «${tokenLabel(e)}».`});
+  }
+
+  if(c.require && c.require.loop && !treeHas('ripeti')) problems.push({m:'Serve almeno un ciclo (blocco Ripeti).'});
+  if(c.require && c.require.cond && !treeHas('se'))     problems.push({m:'Serve almeno una condizione (blocco Se).'});
+  if(c.maxBlocks){ const n=countNodes(program); if(n>c.maxBlocks) problems.push({m:`Troppi blocchi: ne hai usati ${n}, il massimo è ${c.maxBlocks}.`}); }
+
+  if(problems.length===0){
+    chResultMsg(true,[{m:'Sfida superata: sequenza esatta e vincoli rispettati.'}]);
+    if(!solved.has(c.id)){ solved.add(c.id); persistSolved(); renderSfideRow(); }
+  } else {
+    chResultMsg(false, problems);
+  }
+}
+
+/* tab Sfide / Esempi */
+function showTab(which){
+  const sf=which==='sfide';
+  document.getElementById('tabSfide').classList.toggle('on',sf);
+  document.getElementById('tabEsempi').classList.toggle('on',!sf);
+  sfideRow.style.display = sf?'flex':'none';
+  presetsEl.style.display = sf?'none':'flex';
+}
+document.getElementById('tabSfide').onclick=()=>showTab('sfide');
+document.getElementById('tabEsempi').onclick=()=>showTab('esempi');
+document.getElementById('chExit').onclick=exitChallenge;
+
+renderSfideRow();
 
 /* ============================================================
    DIDATTICA DRAWER
